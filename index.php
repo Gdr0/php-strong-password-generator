@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php
+
+require_once __DIR__ . "/partials/functions.php";
+
+// session_start();
+
+?>
 </head>
 <body>
 <!-- <form>
@@ -30,18 +37,18 @@
 $lunghezza= $_GET["length"];
 
 
-function randomPassword($pwslen) {
-    $caratteri="1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuioplkjhgfdsaxzcvbnm!/£$%&/=?*+-_";
-    $password="";
-    for ($i=0 ; $i < $pwslen; $i++){
+// function randomPassword($pwslen) {
+//     $caratteri="1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuioplkjhgfdsaxzcvbnm!/£$%&/=?*+-_";
+//     $password="";
+//     for ($i=0 ; $i < $pwslen; $i++){
      
-        $ind_random = rand(0, strlen($caratteri)-1);
-        $car_random = $caratteri[$ind_random];
-        $password .= $car_random;
-        // echo $car_random;
-    }
-    return $password;
-};
+//         $ind_random = rand(0, strlen($caratteri)-1);
+//         $car_random = $caratteri[$ind_random];
+//         $password .= $car_random;
+//         // echo $car_random;
+//     }
+//     return $password;
+// };
 
 
 $newPws =  randomPassword($lunghezza);
