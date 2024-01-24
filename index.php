@@ -8,15 +8,12 @@
 
 require_once __DIR__ . "/partials/functions.php";
 
-// session_start();
+session_start();
 
 ?>
 </head>
 <body>
-<!-- <form>
-        <input type="text" name="length">
-        <input type="submit" value="CHECK">
-    </form> -->
+
 
     <form>
     <select name="length">
@@ -34,25 +31,16 @@ require_once __DIR__ . "/partials/functions.php";
 </form>
 <?php
 
-$lunghezza= $_GET["length"];
 
 
-// function randomPassword($pwslen) {
-//     $caratteri="1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuioplkjhgfdsaxzcvbnm!/£$%&/=?*+-_";
-//     $password="";
-//     for ($i=0 ; $i < $pwslen; $i++){
-     
-//         $ind_random = rand(0, strlen($caratteri)-1);
-//         $car_random = $caratteri[$ind_random];
-//         $password .= $car_random;
-//         // echo $car_random;
-//     }
-//     return $password;
-// };
+if (isset($_GET["length"])) {
+    $lunghezza = $_GET["length"];
 
-
-$newPws =  randomPassword($lunghezza);
-echo $newPws
+ 
+    $newPsw = randomPassword($lunghezza);
+    $_SESSION['newPsw'] = $newPsw;
+    header('Location: ./password.php');
+}
 
 ?>
 </body>
